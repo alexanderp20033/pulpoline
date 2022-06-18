@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +14,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('currency','CurrencyController@index');
+Route::post('currency','CurrencyController@exchangeCurrency');
+
 
 Route::get('/', function () {
     return view('welcome');
-    Route::get('currency','CurrencyController@index');
-    Route::post('currency','CurrencyController@exchangeCurrency');
+
 });
 
 
@@ -30,21 +34,19 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-
-
     Route::get('/currency', function () {
         return view('currency');
     })->name('convertidor');
 
+
+
+
+//Route::get('currency','CurrencyController@index');
+//Route::post('currency','CurrencyController@exchangeCurrency');
+
+
+
+
 });
-// esta ruta es para el boton convertidor
-
-
-
-
-
-
-
-
 
 

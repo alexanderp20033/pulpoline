@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Conversor de moneda Edwin Peña</title>
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-</head>
-<body>
-
-
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Sistema de conversion de monedas') }}
+            {{ __('Dashboard') }}
         </h2>
     </x-slot>
 
@@ -20,55 +9,70 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sistema de Conversion </title>
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
 <div class="container mt-5">
 <div class="card">
-<div class="card-header">
-Sistema de conversion de monedas
-</div>
+    <div class="card-header">
+        Sistema de Conversion
+    </div>
 <div class="card-body">
 <form id="currency-exchange-rate" action="#" method="post" class="form-group">
-<div class="row mb-3">
-<div class="col-md-4">
-<input type="text" name="amount" class="form-control" value="1">
-            </div>
-                    <div class="col-md-4">
-                            <select name="from_currency" class="form-control">
+    <div class="row mb-3">
+        <div class="col-md-4">
+        <input type="number" name="amount" class="form-control" value="1">
+    </div>
+        <div class="col-md-4">
+            <select name="from_currency" class="form-control">
+            <option value='AUD'>AUD</option>
+            <option value='BGN'>BGN</option>
+            <option value='BRL'>BRL</option>
+            <option value='CAD'>CAD</option>
+            <option value='CHF'>CHF</option>
+            <option value='CNY'>CNY</option>
+            <option value='CZK'>CZK</option>
+            <option value='DKK'>DKK</option>
+            <option value='EUR'>EUR</option>
+            </select>
+    </div>
+            <div class="col-md-4">
+                <select name="to_currency" class="form-control">
                                 <option value='AUD'>AUD</option>
-                                <option value='BGN'>BGN</option>
-                                <option value='BRL'>BRL</option>
-                                <option value='CAD'>CAD</option>
-                            </select>
-                     </div>
-
-
-                    <div class="col-md-4">
-                        <select name="to_currency" class="form-control">
-                            <option value='AUD'>AUD</option>
-                            <option value='BGN'>BGN</option>
-                            <option value='BRL'>BRL</option>
-                            <option value='CAD'>CAD</option>
-                    </select>
+                               <option value='BGN'>BGN</option>
+                               <option value='BRL'>BRL</option>
+                               <option value='CAD'>CAD</option>
+                               <option value='CHF'>CHF</option>
+                               <option value='CNY'>CNY</option>
+                               <option value='CZK'>CZK</option>
+                               <option value='DKK'>DKK</option>
+                               <option value='EUR'>EUR</option>
+                </select>
             </div>
-</div>
-            <div class="row">
-                <div class="col-md-4">
-                <input type="submit" name="submit" id="btnSubmit" class="btn btn-success " value="Convertir">
-                </div>
+    </div>
+        <div class="row">
+            <div class="col-md-4">
+             <input type="submit" name="submit" id="btnSubmit" class="btn btn-primary " value="Convertir">
             </div>
+        </div>
 </form>
 </div>
-<div class="card-footer">
-
-</div>
+        <div class="card-footer">
+             <span id="output"></span>
+        </div>
 </div>
 </div>
             </div>
         </div>
     </div>
 </x-app-layout>
-
-
-
 
 <script>
 $(document).ready(function () {
