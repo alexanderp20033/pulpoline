@@ -18,4 +18,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware('throttle:intentos')->group(function () {
+    Route::get('/currency', function () {
+        return view('welcome');
+    });
+});
+
+
 

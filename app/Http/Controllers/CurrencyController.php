@@ -9,7 +9,7 @@ use AshAllenDesign\LaravelExchangeRates\ExchangeRate;
 use Guzzle\Http\Exception\ClientErrorResponseException;
 
 use carbon\Carbon;
-
+use http;
 class CurrencyController extends Controller
 {
     //
