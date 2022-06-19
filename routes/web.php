@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use App\Http\Controllers\CurrencyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,8 +22,8 @@ use Illuminate\Support\Facades\RateLimiter;
 
 
 
-Route::get('currency','CurrencyController@index');
-Route::post('currency','CurrencyController@exchangeCurrency');
+Route::get('/currency', [CurrencyController::class, 'index']);
+Route::post('/currency', [CurrencyController::class, 'exchangeCurrency']);
 
 
 Route::get('/', function () {
@@ -52,6 +53,8 @@ Route::middleware([
     })->name('convertidor');
 
 
+//Route::get('/currency', 'App\Http\Controllers\CurrencyController@index');
+//Route::get('/currency', 'App\Http\Controllers\CurrencyController@exchangeCurrency');
 
 
 });

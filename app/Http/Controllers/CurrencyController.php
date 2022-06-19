@@ -30,7 +30,7 @@ class CurrencyController extends Controller
       $query =  "{$from_Currency}_{$to_Currency}";
 
       // change to the free URL if you're using the free version
-      $json = file_get_contents("http://free.currencyconverterapi.com/api/v5/convert?q={$query}&compact=y&apiKey={$apikey}");
+      $json = file_get_contents("https://free.currconv.com/api/v5/convert?q={$query}&compact=y&apiKey={$apikey}");
 
       $obj = json_decode($json, true);
 
@@ -49,3 +49,5 @@ class CurrencyController extends Controller
    }
 
 }
+
+
