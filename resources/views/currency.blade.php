@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Sistema de Conversión') }}
         </h2>
     </x-slot>
 
@@ -26,11 +26,24 @@
     </div>
 <div class="card-body">
 <form id="currency-exchange-rate" action="#" method="post" class="form-group">
+
+
+
+
     <div class="row mb-3">
-        <div class="col-md-4">
+        <div class="col-md-1">
+        <label>Monto </label>
+    </div>
+    <div class="col-md-3">
         <input type="number" name="amount" class="form-control" value="1">
     </div>
-        <div class="col-md-4">
+
+    <div class="row mb-3">
+            <div class="col-md-2">
+            <label>From </label>
+            </div>
+    </div>
+        <div class="col-md-3">
             <select name="from_currency" class="form-control">
             <option value='AUD'>AUD</option>
             <option value='BGN'>BGN</option>
@@ -67,7 +80,14 @@
             <option value='ZAR'>ZAR</option>
                </select>
     </div>
-            <div class="col-md-4">
+
+
+    <div class="row mb-3">
+                <div class="col-md-2">
+                <label>To </label>
+                </div>
+        </div>
+            <div class="col-md-3">
                 <select name="to_currency" class="form-control">
                                 <option value='AUD'>AUD</option>
                                 <option value='BGN'>BGN</option>

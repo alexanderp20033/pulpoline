@@ -1,3 +1,3 @@
-<!--<img src="{{ asset('public/imagenes/logo.png') }}" />-->
+<!--aqui se cambia el logo que aparece en ventana principal de jetstreamin "dashboard"-->
 
-<img  src="{{ asset('images/logo.png') }}">
+<!--<img  src="{{ asset('imagenes/logo.png') }}">-->

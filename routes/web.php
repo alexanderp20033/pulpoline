@@ -17,18 +17,15 @@ use App\Http\Controllers\CurrencyController;
 */
 
 
-// si la ruta la dejo en la raiz, me funciona pèro al colocar la urta currency no me funciona
-
-
-
-
+// rutas para la pantalla de conversion
 Route::get('/currency', [CurrencyController::class, 'index']);
 Route::post('/currency', [CurrencyController::class, 'exchangeCurrency']);
 
- //este era el enrutador original
-Route::get('/', function () {
-    return view('welcome');
+ Route::get('/', function () {
 
+   // esto se coloca para no entrar a la pantalla de bienvenida, si no que entre de una vez al login
+   //return redirect()->route('login');
+return view('welcome');
 });
 
 
@@ -41,10 +38,7 @@ Route::get('/currency', function () {
 })->middleware('throttle:intentos')->name('convertidor');
 
 
-
-
-
-
+// estos enrutadores fueron creados al instalar jetstream.
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -56,10 +50,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-  /*  Route::get('/currency', function () {
-        return view('currency');
-    })->name('convertidor');
-*/
 
 });
 
