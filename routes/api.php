@@ -17,12 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::middleware('throttle:intentos')->group(function () {
-    Route::get('/currency', function () {
+Route::middleware('throttle:intentos')->get('/currency', function (Request $request) {
         return view('welcome');
     });
-});
+
 
 
 

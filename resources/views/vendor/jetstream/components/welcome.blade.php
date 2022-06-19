@@ -8,10 +8,10 @@
     </div>
 
     <div class="mt-6 text-gray-500">
-        Al solicitar mas d 5 veces la API deberia venir a esta ventana
+        Quisiera que al utilizar mas de  5   veces el convertidor, me diriga a esta ventana y no a la ventana de error 429
     </div>
 </div>
-
+<!--
 <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
     <div class="p-6">
         <div class="flex items-center">
@@ -83,5 +83,5 @@
                 Authentication and registration views are included with Laravel Jetstream, as well as support for user email verification and resetting forgotten passwords. So, you're free to get started what matters most: building your application.
             </div>
         </div>
-    </div>
+    </div>-->
 </div>

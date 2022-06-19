@@ -25,16 +25,24 @@ use App\Http\Controllers\CurrencyController;
 Route::get('/currency', [CurrencyController::class, 'index']);
 Route::post('/currency', [CurrencyController::class, 'exchangeCurrency']);
 
-
+ //este era el enrutador original
 Route::get('/', function () {
     return view('welcome');
 
 });
 
-Route::get('/currency', function () {
-     return view('welcome');
 
-})->middleware(['throttle:intentos2']);
+
+
+//para limitar 5  peticiones por minuto, tambien agregre el name para poder llamarlo desde el menu
+Route::get('/currency', function () {
+    return view('currency');
+
+})->middleware('throttle:intentos')->name('convertidor');
+
+
+
+
 
 
 Route::middleware([
@@ -48,14 +56,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/currency', function () {
+  /*  Route::get('/currency', function () {
         return view('currency');
     })->name('convertidor');
-
-
-//Route::get('/currency', 'App\Http\Controllers\CurrencyController@index');
-//Route::get('/currency', 'App\Http\Controllers\CurrencyController@exchangeCurrency');
-
+*/
 
 });
 

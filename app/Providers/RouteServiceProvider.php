@@ -54,6 +54,18 @@ class RouteServiceProvider extends ServiceProvider
         });
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * Configure the rate limiters for the application.
      *
@@ -66,17 +78,10 @@ class RouteServiceProvider extends ServiceProvider
                     });
 
 
-            RateLimiter::for('intentos', function (Request $request) {
-                return Limit::perMinute(5)->by(optional($request->user())->id ?: $request->ip());
-        });
+                        RateLimiter::for('intentos', function (Request $request) {
+                            return Limit::perMinute(5)->by(optional($request->user())->id ?: $request->ip());
 
-
-            RateLimiter::for('intentos2', function (Request $request) {
-                        return Limit::perMinute(3);
                     });
-
-
-
 
 
 

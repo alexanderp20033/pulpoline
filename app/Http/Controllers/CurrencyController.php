@@ -38,11 +38,21 @@ class CurrencyController extends Controller
 
       $total = $val['val'] * 1;
 
-      $formatValue = number_format($total, 2, '.', '');
+      $total2 = $val['val'] * $amount;
 
-      $data = "$amount $from_Currency = $to_Currency $formatValue";
+      $formatValue = number_format($total, 2, '.', '2');
 
+      $data = "$amount $from_Currency = $total2 $to_Currency,
+        $from_Currency=  $formatValue";
+        //$data = "aqui deberia mostrar el total pero no he podido";
       echo $data; die;
+
+
+
+
+
+
+
 
 
 
